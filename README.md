@@ -10,8 +10,7 @@ knitr::opts_chunk$set(echo = TRUE, message= FALSE, warning = FALSE)
 
 I wrote this function to create ordred factor levels from `case_when` It allows you to vreate a foctor variable, e.g., within `mutate` that maintains the order of the levels created 
 
-I clean a lot of survey and public opinion data in my research. I constantly 
-
+I create a lot of graphs in order to visulaize my data. This can often be time consumming especially when there is a lot of data to clean and analyze. 
 
 
 ## The function
@@ -19,12 +18,37 @@ I clean a lot of survey and public opinion data in my research. I constantly
 ```{r func, eval=TRUE}
 
 # Packages
+library(haven)
 library(tidyverse)
+library(scales)
+library(readr)
+library(ggplot2)
 
-# The Function used is ......
+# The Function used is ggplot
 
 #The code chunk
-summary(cars)
+sen %>%
+  filter(expression == "_deluxe") %>%
+  drop_na(c("seatprob_Dparty", "seatprob_Rparty"))
+
+
+ggplot(sen1,aes(x=seatsheld, y=seatprob_Rparty)) +
+  geom_col((aes(fill = seatsheld < weighted.mean (seatsheld, seatprob_Dparty)))) +
+  scale_x_continuous(labels = function(x) {
+    ifelse(x < 50, paste0("", 100 - x),
+           paste0("", x))}, 
+    breaks = 20:31 * 2) +
+  scale_fill_manual(values=c("#5768ac","#f86a68"), guide = 'none') +
+           labs(x= NULL, y= NULL, 
+       title ="How many Senate seats we expect each party to win",
+       subtitle = "Party seats counts based on who wins the Senate in our Deluxe model's 40,000 simulations",
+       caption = "FiveThirtyEight Deluxe Forecast, OCT 12, 2022, 3 P.M, ET") + 
+  theme_minimal()+
+  theme(
+    plot.title = element_text(face = "bold",hjust = 0.5),
+    plot.subtitle = element_text(hjust = 0.5),
+    legend.position = "none") +
+  scale_y_continuous(labels = scales::label_percent())
 
 
 ```
