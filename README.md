@@ -10,13 +10,12 @@ I work with large data sets and need to calculate summary statistics for each gr
 This is also helpful when your goal is to graph your data as plots. 
 
 
+## The code chunk and packages 
 
 ```{r func, echo = T, results = FALSE}
 
 # Packages
 library(tidyverse)
-
-#The code chunk
 
 iris %>% 
   group_by(Species) %>%
