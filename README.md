@@ -9,4 +9,4 @@ I work with large data sets and need to calculate summary statistics for each gr
 
 This is also helpful when your goal is to graph your data as plots. 
 
-See the funtion and output in [Codechunk] (https://github.com/Bintou1/Codechunk/blob/11b3cd14a894bb4779c269def8d35ff76fd98a41/Codechunk)
+See the funtion and output in [Function.md] https://github.com/Bintou1/Codechunk/blob/42cc7ed4f585fca4256417a124f6358466299e0d/Function.md
