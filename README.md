@@ -9,4 +9,6 @@ I work with large data sets and need to calculate summary statistics for each gr
 
 This is also helpful when your goal is to graph your data as plots. 
 
-See the funtion and output in [Readme.md] `(https://github.com/Bintou1/Codechunk/blob/f1a92a276cbd273ea501456c7e6667c315b6f553/Readme.md)` 
+See the funtion and output in [Readme.md] `[https://github.com/Bintou1/Codechunk/blob/f1a92a276cbd273ea501456c7e6667c315b6f553/Readme.md]`
+
+[Linkedin] (https://www.linkedin.com/in/bintou-doumbia/)
