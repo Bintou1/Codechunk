@@ -9,23 +9,4 @@ I work with large data sets and need to calculate summary statistics for each gr
 
 This is also helpful when your goal is to graph your data as plots. 
 
-
-## The code chunk and packages 
-
-```{r func, echo = T, results = FALSE}
-
-# Packages
-library(tidyverse)
-
-iris %>% 
-  group_by(Species) %>%
-  summarize(
-    mean = mean(Sepal.Length,na.rm=T),
-    med = median(Sepal.Length,na.rm=T),
-    min = min(Sepal.Length,na.rm=T),
-    max = max(Sepal.Length,na.rm=T),
-    Q1=quantile(Sepal.Length,probs = 0.25, na.rm=T),
-    Q3=quantile(Sepal.Length, probs = 0.75, na.rm=T)
-    )
-
-```
+See the funtion and output in `readme.md`
